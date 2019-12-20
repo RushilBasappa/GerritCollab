@@ -29,7 +29,7 @@ def pull_and_checkout(cl):
     print(ref_path)
     _,_,XX,YYYY,PP = ref_path.split('/')
 
-    COMMAND = "git fetch \"https://{USERNAME}@gerrit.p.sojern.net/a/sojern/python\" refs/changes/{XX}/{YYYY}/{PP} && git checkout FETCH_HEAD && git checkout -b {YYYY}_{PP}".format(XX=XX,YYYY=YYYY,PP=PP,USERNAME=USERNAME)
+    COMMAND = "git fetch \"https://{USERNAME}@gerrit.p.sojern.net/a/sojern/code\" refs/changes/{XX}/{YYYY}/{PP} && git checkout FETCH_HEAD && git checkout -b {YYYY}_{PP}".format(XX=XX,YYYY=YYYY,PP=PP,USERNAME=USERNAME)
     print(COMMAND)
     output = run_cmd(COMMAND)
     click.echo(output)
